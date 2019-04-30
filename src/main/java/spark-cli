@@ -1,22 +1,16 @@
-./bin/spark-submit --master yarn-cluster --class spark.WordCount --name word count --driver-memory 1g --executor-memory 1g --executor-cores 1 --num-executors 2 ./demojars/my.spark-1.0-SNAPSHOT-jar-with-dependencies.jar ./tmp/input/words ./tmp/output
-
-
+./bin/spark-submit --master yarn-cluster --class spark.JavaSparkPI \
+--name SparkPI \
+--driver-memory 1g \
+--executor-memory 1g \
+--executor-cores 1 \
+--num-executors 2 \
+./demojars/myspark.jar
 
 ./bin/spark-submit --master yarn-cluster --class spark.WordCount \
---name word count \
+--name wordcount \
 --driver-memory 1g \
 --executor-memory 1g \
 --executor-cores 1 \
 --num-executors 2 \
-./demojars/my.spark-1.0-SNAPSHOT-jar-with-dependencies.jar \
-/usr/local/spark/tmp/input/words /usr/local/spark/tmp/output
-
-
-./bin/spark-submit --master yarn-client --class spark.WordCount \
---name word count \
---driver-memory 1g \
---executor-memory 1g \
---executor-cores 1 \
---num-executors 2 \
-./demojars/my.spark-1.0-SNAPSHOT-jar-with-dependencies.jar \
-./tmp/input/words ./tmp/output
+./demojars/myspark.jar \
+hdfs://hadoop:9000/tmp/input/words hdfs://hadoop:9000/tmp/output

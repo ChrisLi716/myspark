@@ -14,6 +14,7 @@ public class JavaSparkPI {
 		{
 			SparkConf conf = new SparkConf();
 			conf.setAppName("Java Spark Pi");
+			conf.setMaster("local[2]");
 			JavaSparkContext jsc = new JavaSparkContext(conf);
 			
 			int slices = 2;
