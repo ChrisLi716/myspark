@@ -17,7 +17,7 @@ public class SparkSQLTest {
 		peopleDS.write().csv("data/tmp/1.csv");
 		peopleDS.write().json("data/tmp/1.json");
 		peopleDS.write().parquet("data/tmp/1.parquet");
-		peopleDS.write().orc("data/tmp/1.orc");
+		peopleDS.write().orc("data/tmp/users.orc");
 
 
 		spark.stop();

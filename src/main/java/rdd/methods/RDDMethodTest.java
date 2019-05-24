@@ -16,7 +16,7 @@ public class RDDMethodTest {
 		SparkConf conf = new SparkConf().setMaster("local[2]").setAppName("RDDMethodTest");
 		JavaSparkContext jsc = new JavaSparkContext(conf);
 
-		joinTest(jsc);
+		glomTest(jsc);
 	}
 	
 	private static void mapTest(JavaSparkContext jsc) {

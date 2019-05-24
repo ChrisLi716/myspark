@@ -19,7 +19,7 @@ public class DataFrameExercise {
 		userDF.first();
 		userDF.take(2);
 		userDF.head(2);
-		
+
 		userDF.select("userID", "age").show();
 		userDF.selectExpr("userID", "ceil(age/10) as newAge").show(2);
 		userDF.select(max("age"), min("age"), avg("age")).show();
@@ -27,7 +27,7 @@ public class DataFrameExercise {
 		userDF.filter("age > 30 and occupation = 10").show();
 		userDF.select("userID", "age").filter("age > 30").show(2);
 		userDF.filter("age > 30").select("userID", "age").show(2);
-		
+
 		userDF.groupBy("age").count().show();
 		userDF.groupBy("age").agg(count("gender"), countDistinct("occupation")).show();*/
 		
