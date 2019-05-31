@@ -26,7 +26,6 @@ public class HBaseStreamingWordCount {
 	
 	public static void main(String[] args)
 		throws Exception {
-		
 		SparkConf sparkConf = new SparkConf().setAppName("HBaseStreamingWordCount");
 		JavaStreamingContext ssc = new JavaStreamingContext(sparkConf, Durations.seconds(10));
 		
@@ -51,7 +50,6 @@ public class HBaseStreamingWordCount {
 		
 		ssc.start();
 		ssc.awaitTermination();
-		
 	}
 	
 	private static void writeToTable(Table table, String word, Integer count, String time)

@@ -16,7 +16,7 @@ public class BasicPracticeFour {
 		
 		// TODO add your code here
 		String FILE_PATH = "data/WalmartFile";
-		JavaRDD<String> fileRdd = jsc.textFile(FILE_PATH, 2);
+		JavaRDD<String> fileRdd = jsc.textFile(FILE_PATH);
 		
 		/*
 		 * id, sum(x), sum(y), sum(z)

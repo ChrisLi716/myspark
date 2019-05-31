@@ -17,7 +17,8 @@ public class BasicPracticeOne {
 		List<Integer> result = new ArrayList();
 		for (int i = 100; i <= 1000; i++)
 			result.add(i);
-		JavaRDD<Integer> input = jsc.parallelize(result, 7);
+		JavaRDD<Integer> input = jsc.parallelize(result);
+		input.partitions().size();
 		// TODO add your code here
 		System.out.println("head 5 elements are :" + input.take(5));
 		System.out.println("sum is :" + input.reduce((a, b) -> a + b));
